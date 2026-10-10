@@ -76,5 +76,5 @@ fields:
     label: Number of children
   disabled:
     type: bool
-    default: true
+    default: false
     label: Disabled (divyang) beneficiary

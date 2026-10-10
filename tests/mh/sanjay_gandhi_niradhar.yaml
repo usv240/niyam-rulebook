@@ -155,3 +155,15 @@ cases:
     person: {<<: *base, marital_status: widowed, children_count: 3}
     expect: {eligible: true, monthly_inr: 1200}
     source: GR 201908211212469922 p.11 clause Appendix-1 row 4(1)
+
+  - name: income Rs 30,000 is not eligible when disability is not stated (no default widening)
+    date: 2020-01-01
+    person: {age: 40, state: MH, years_in_maharashtra: 20, marital_status: married, children_count: 0, annual_family_income: 30000}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 Appendix-1 row 3 (Rs 50,000 limit applies only to disabled beneficiaries)
+
+  - name: disabled person with income Rs 30,000 is eligible
+    date: 2020-01-01
+    person: {age: 40, state: MH, years_in_maharashtra: 20, marital_status: married, children_count: 0, annual_family_income: 30000, disabled: true}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 Appendix-1 row 3
