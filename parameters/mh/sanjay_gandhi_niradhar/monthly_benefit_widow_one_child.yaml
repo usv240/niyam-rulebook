@@ -1,0 +1,13 @@
+description: Monthly assistance paid to a widow beneficiary with 1 child
+metadata:
+  unit: currency-INR
+values:
+  2019-09-01:
+    value: 1100
+    metadata:
+      reference:
+        doc: gr-201908211212469922
+        page: 11
+        clause: "Appendix-1 row 4(1)"
+        quote: "१ अपत्य असलेल्या विधवा लाभार्थ्यांना अर्थसहाय्याची रक्कम दरमहा रुपये ११००/-"
+        quote_en: "Widow beneficiaries with 1 child will receive assistance of Rs 1100/- per month"

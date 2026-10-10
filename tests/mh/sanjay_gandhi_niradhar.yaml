@@ -1,0 +1,169 @@
+scheme: mh.sanjay_gandhi_niradhar
+# Base person used by every case: an eligible, married, non-disabled resident.
+# Each case changes only what it tests. Every case cites its clause.
+base: &base
+  age: 40
+  state: MH
+  years_in_maharashtra: 20
+  marital_status: married
+  children_count: 0
+  annual_family_income: 15000
+  disabled: false
+  other_scheme_monthly_inr: 0
+
+cases:
+  - name: typical eligible person gets Rs 1,000
+    date: 2019-09-15
+    person: {<<: *base}
+    expect: {eligible: true, monthly_inr: 1000}
+    source: GR 201908211212469922 p.3 clause State-sponsored scheme (1)
+
+  - name: scheme not in force before 1 September 2019
+    date: 2019-08-31
+    person: {<<: *base}
+    expect: {eligible: false, in_force: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 Namuna 1
+
+  - name: eligible on the first day the revised rules apply
+    date: 2019-09-01
+    person: {<<: *base}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 Namuna 1
+
+  - name: 14 years in Maharashtra is not eligible
+    date: 2019-09-15
+    person: {<<: *base, years_in_maharashtra: 14}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 1
+
+  - name: exactly 15 years in Maharashtra is eligible
+    date: 2019-09-15
+    person: {<<: *base, years_in_maharashtra: 15}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 1
+
+  - name: 16 years in Maharashtra is eligible
+    date: 2019-09-15
+    person: {<<: *base, years_in_maharashtra: 16}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 1
+
+  - name: resident of another state is not eligible
+    date: 2019-09-15
+    person: {<<: *base, state: other}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 1
+
+  - name: age 17 is not eligible
+    date: 2019-09-15
+    person: {<<: *base, age: 17}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 2
+
+  - name: age 18 is eligible (lower boundary)
+    date: 2019-09-15
+    person: {<<: *base, age: 18}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 2
+
+  - name: age 19 is eligible
+    date: 2019-09-15
+    person: {<<: *base, age: 19}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 2
+
+  - name: age 64 is eligible
+    date: 2019-09-15
+    person: {<<: *base, age: 64}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 2
+
+  - name: age 65 is not eligible (upper boundary)
+    date: 2019-09-15
+    person: {<<: *base, age: 65}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 2
+
+  - name: age 66 is not eligible
+    date: 2019-09-15
+    person: {<<: *base, age: 66}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 2
+
+  - name: income Rs 20,999 is eligible
+    date: 2019-09-15
+    person: {<<: *base, annual_family_income: 20999}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 3
+
+  - name: income exactly Rs 21,000 is eligible (inclusive)
+    date: 2019-09-15
+    person: {<<: *base, annual_family_income: 21000}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 3
+
+  - name: income Rs 21,001 is not eligible
+    date: 2019-09-15
+    person: {<<: *base, annual_family_income: 21001}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 3
+
+  - name: non-disabled person with Rs 30,000 income is not eligible
+    date: 2019-09-15
+    person: {<<: *base, annual_family_income: 30000}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 3
+
+  - name: disabled person with exactly Rs 50,000 income is eligible
+    date: 2019-09-15
+    person: {<<: *base, disabled: true, annual_family_income: 50000}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 3
+
+  - name: disabled person with Rs 50,001 income is not eligible
+    date: 2019-09-15
+    person: {<<: *base, disabled: true, annual_family_income: 50001}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 3
+
+  - name: receives Rs 1 a month from another scheme is not eligible
+    date: 2019-09-15
+    person: {<<: *base, other_scheme_monthly_inr: 1}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.14 clause Appendix-1 row 15
+
+  - name: widow with no child gets Rs 1,000
+    date: 2019-09-15
+    person: {<<: *base, marital_status: widowed, children_count: 0}
+    expect: {eligible: true, monthly_inr: 1000}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 4(1)
+
+  - name: widow with 1 child gets Rs 1,100
+    date: 2019-09-15
+    person: {<<: *base, marital_status: widowed, children_count: 1}
+    expect: {eligible: true, monthly_inr: 1100}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 4(1)
+
+  - name: widow with 2 children gets Rs 1,200
+    date: 2019-09-15
+    person: {<<: *base, marital_status: widowed, children_count: 2}
+    expect: {eligible: true, monthly_inr: 1200}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 4(1)
+
+  - name: widow with 3 children gets Rs 1,200
+    date: 2019-09-15
+    person: {<<: *base, marital_status: widowed, children_count: 3}
+    expect: {eligible: true, monthly_inr: 1200}
+    source: GR 201908211212469922 p.11 clause Appendix-1 row 4(1)
+
+  - name: income Rs 30,000 is not eligible when disability is not stated (no default widening)
+    date: 2020-01-01
+    person: {age: 40, state: MH, years_in_maharashtra: 20, marital_status: married, children_count: 0, annual_family_income: 30000}
+    expect: {eligible: false}
+    source: GR 201908211212469922 p.11 Appendix-1 row 3 (Rs 50,000 limit applies only to disabled beneficiaries)
+
+  - name: disabled person with income Rs 30,000 is eligible
+    date: 2020-01-01
+    person: {age: 40, state: MH, years_in_maharashtra: 20, marital_status: married, children_count: 0, annual_family_income: 30000, disabled: true}
+    expect: {eligible: true}
+    source: GR 201908211212469922 p.11 Appendix-1 row 3

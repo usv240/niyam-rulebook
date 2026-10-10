@@ -66,3 +66,15 @@ fields:
     values: [none, yellow, orange, white]
     default: none
     label: Ration card colour
+  years_in_maharashtra:
+    type: int
+    default: 15
+    label: Completed years lived in Maharashtra
+  children_count:
+    type: int
+    default: 0
+    label: Number of children
+  disabled:
+    type: bool
+    default: false
+    label: Disabled (divyang) beneficiary
