@@ -11,3 +11,12 @@ values:
         clause: "Appendix-1 row 4(1)"
         quote: "२ अपत्य (२ व त्यापेक्षा अधिक अपत्य) असलेल्या विधवा लाभार्थ्यांना मिळणाऱ्या दरमहा रुपये १२००/-"
         quote_en: "Widow beneficiaries with 2 children (2 or more children) will receive Rs 1200/- per month"
+  2023-07-05:
+    value: 1500
+    metadata:
+      reference:
+        doc: gr-202307061137387522
+        page: 1
+        clause: "1"
+        quote: "त्यानुसार १ अपत्य किंवा २ अपत्य असलेल्या विधवा लाभार्थ्यांना देखील अर्थसहाय्याची रक्कम दरमहा रु.१५००/- इतकी राहील."
+        quote_en: "Accordingly, widow beneficiaries with 1 child or 2 children will also receive the assistance amount of Rs 1500/- per month."

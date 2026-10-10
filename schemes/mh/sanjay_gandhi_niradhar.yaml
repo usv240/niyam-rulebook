@@ -7,6 +7,7 @@ launched: 2019-09-01               # the revised rules apply from this date (GR 
 benefit:
   # GR 2019-08-20, page 3: Rs 1,000 per month; widows with 1 child get Rs 1,100 and
   # widows with 2 or more children get Rs 1,200 (Appendix-1, row 4(1)).
+  # GR 2023-07-05, clause 1: from 2023-07-05 every tier above becomes Rs 1,500 (see parameters/).
   monthly_inr: "params.monthly_benefit_widow_two_or_more_children if (person.marital_status == 'widowed' and person.children_count >= 2) else (params.monthly_benefit_widow_one_child if (person.marital_status == 'widowed' and person.children_count == 1) else params.monthly_benefit)"
   source:
     doc: gr-201908211212469922

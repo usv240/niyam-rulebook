@@ -167,3 +167,72 @@ cases:
     person: {age: 40, state: MH, years_in_maharashtra: 20, marital_status: married, children_count: 0, annual_family_income: 30000, disabled: true}
     expect: {eligible: true}
     source: GR 201908211212469922 p.11 Appendix-1 row 3
+
+  # GR 202307061137387522 (5 July 2023): assistance rises to Rs 1,500 for all tiers.
+  # Cases dated 4 July 2023 keep the old amounts; cases from 5 July 2023 get Rs 1,500.
+
+  - name: typical eligible person still gets Rs 1,000 the day before the increase
+    date: 2023-07-04
+    person: {<<: *base}
+    expect: {eligible: true, monthly_inr: 1000}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: typical eligible person gets Rs 1,500 from 5 July 2023
+    date: 2023-07-05
+    person: {<<: *base}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: typical eligible person gets Rs 1,500 in 2026
+    date: 2026-10-10
+    person: {<<: *base}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with no child still gets Rs 1,000 the day before the increase
+    date: 2023-07-04
+    person: {<<: *base, marital_status: widowed, children_count: 0}
+    expect: {eligible: true, monthly_inr: 1000}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with no child gets Rs 1,500 from 5 July 2023
+    date: 2023-07-05
+    person: {<<: *base, marital_status: widowed, children_count: 0}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with 1 child still gets Rs 1,100 the day before the increase
+    date: 2023-07-04
+    person: {<<: *base, marital_status: widowed, children_count: 1}
+    expect: {eligible: true, monthly_inr: 1100}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with 1 child gets Rs 1,500 from 5 July 2023
+    date: 2023-07-05
+    person: {<<: *base, marital_status: widowed, children_count: 1}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with 1 child gets Rs 1,500 in 2026
+    date: 2026-10-10
+    person: {<<: *base, marital_status: widowed, children_count: 1}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with 2 children still gets Rs 1,200 the day before the increase
+    date: 2023-07-04
+    person: {<<: *base, marital_status: widowed, children_count: 2}
+    expect: {eligible: true, monthly_inr: 1200}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with 2 children gets Rs 1,500 from 5 July 2023
+    date: 2023-07-05
+    person: {<<: *base, marital_status: widowed, children_count: 2}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202307061137387522 p.1 clause 1
+
+  - name: widow with 3 children gets Rs 1,500 from 5 July 2023 (same tier as 2 or more children)
+    date: 2023-07-05
+    person: {<<: *base, marital_status: widowed, children_count: 3}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202307061137387522 p.1 clause 1

@@ -52,3 +52,18 @@ gr-201908211212469922:
   - विसयो-2015/प्र.क्र.275/विसयो-2 दि. 05 जानेवारी 2016
   - विसयो-2017/प्र.क्र.203/विसयो दि. 03 नोव्हेंबर 2018
   - विसयो-2016/प्र.क्र.232/विसयो दि. 11 जून 2019
+gr-202307061137387522:
+  kind: government_resolution
+  code: '202307061137387522'
+  date: '2023-07-05'
+  department: Government of Maharashtra
+  title_mr: संजय गांधी निराधार अनुदान योजना व श्रावणबाळ सेवा राज्य निवृत्तीवेतन योजनेंतर्गत
+    सर्व लाभार्थ्यांच्या अर्थसहाय्यात वाढ करण्याबाबत.
+  title_en: Increase in financial assistance for all beneficiaries under the Sanjay
+    Gandhi Niradhar Anudan Yojana and Shravanbal Seva State Pension Scheme
+  url: https://gr.maharashtra.gov.in/Site/Upload/Government%20Resolutions/Marathi/202307061137387522.pdf
+  local: sources/mh/202307061137387522.pdf
+  language: mr
+  amends:
+  - 20.08.2019
+  - 03.05.2021

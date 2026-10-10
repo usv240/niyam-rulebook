@@ -11,3 +11,12 @@ values:
         clause: "State-sponsored scheme (1)"
         quote: "रुपये४००/- इतकी वाढ करुन अर्थसहाय्याची रक्कम दरमहा रुपये १०००/- अशी करण्यात येत आहे."
         quote_en: "increased by Rs 400/- so that the assistance amount becomes Rs 1000/- per month."
+  2023-07-05:
+    value: 1500
+    metadata:
+      reference:
+        doc: gr-202307061137387522
+        page: 1
+        clause: "1"
+        quote: "रुपये ५००/- इतकी वाढ करुन अर्थसहाय्याची रक्कम दरमहा रुपये १५००/- करण्यास याद्वारे शासन मान्यता देत आहे."
+        quote_en: "By increasing it by Rs 500/-, the government hereby approves making the monthly assistance amount Rs 1500/-."
