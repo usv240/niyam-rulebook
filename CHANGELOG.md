@@ -3,6 +3,13 @@
 Plain-language record of every rule change. Newest first. Each entry is in
 English, Hindi and Marathi and links to its source.
 
+## 5 July 2023: Sanjay Gandhi Niradhar Anudan Yojana monthly assistance raised to Rs 1,500 (GR dated 5 July 2023)
+
+- English: From 5 July 2023 the monthly assistance for all Sanjay Gandhi Niradhar beneficiaries rises from Rs 1,000 to Rs 1,500. Widows with one child and widows with two or more children also get Rs 1,500 a month, up from Rs 1,100 and Rs 1,200. Eligibility conditions are unchanged. Payments before 5 July 2023 keep the old amounts.
+- हिंदी: 5 जुलाई 2023 से संजय गांधी निराधार अनुदान योजना के सभी लाभार्थियों को मिलने वाली मासिक सहायता 1,000 रुपये से बढ़कर 1,500 रुपये हो जाएगी। एक अपत्य वाली विधवाओं और दो या अधिक अपत्य वाली विधवाओं को भी हर महीने 1,500 रुपये मिलेंगे, जो पहले क्रमशः 1,100 रुपये और 1,200 रुपये थे। पात्रता की शर्तें नहीं बदली हैं। 5 जुलाई 2023 से पहले के भुगतान पुरानी रकम पर ही होंगे।
+- मराठी: ५ जुलै २०२३ पासून संजय गांधी निराधार अनुदान योजनेतील सर्व लाभार्थ्यांना मिळणारी दरमहा मदत १,००० रुपयांवरून १,५०० रुपये होईल. एक अपत्य असलेल्या विधवांना आणि दोन किंवा अधिक अपत्ये असलेल्या विधवांना दरमहा १,५०० रुपये मिळतील, पूर्वी ते अनुक्रमे १,१०० रुपये आणि १,२०० रुपये होते. पात्रतेच्या अटी बदललेल्या नाहीत. ५ जुलै २०२३ पूर्वीचे अनुदान जुन्या रकमेनुसारच दिले जाईल.
+- Source: [GR 202307061137387522](https://gr.maharashtra.gov.in/Site/Upload/Government%20Resolutions/Marathi/202307061137387522.pdf)
+
 ## 1 September 2019: Sanjay Gandhi Niradhar Anudan Yojana (GR dated 20 August 2019)
 
 - English: The scheme starts on 1 September 2019 with revised rules. People who have lived in Maharashtra for at least 15 years, are aged 18 to 64, have a family income up to Rs 21,000 a year (Rs 50,000 for disabled people), and get no regular benefit from another government scheme, get Rs 1,000 a month. Widows with one child get Rs 1,100 and widows with two or more children get Rs 1,200.
