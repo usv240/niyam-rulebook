@@ -1,0 +1,37 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JFNT0M069MG48K0FT9V50P",
+  "strategy": "manual-commit",
+  "branch": "niyam/job_20261010_d7619dd2",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/ladki_bahin/annual_income_limit.yaml",
+    "parameters/mh/ladki_bahin/disqualifying_govt_jobs.yaml",
+    "parameters/mh/ladki_bahin/eligible_marital_status.yaml",
+    "parameters/mh/ladki_bahin/max_age.yaml",
+    "parameters/mh/ladki_bahin/max_farm_land_acres.yaml",
+    "parameters/mh/ladki_bahin/min_age.yaml",
+    "parameters/mh/ladki_bahin/monthly_benefit_inr.yaml",
+    "parameters/mh/ladki_bahin/other_scheme_threshold_inr.yaml",
+    "schemes/mh/ladki_bahin.yaml",
+    "sources/index.yaml",
+    "tests/mh/ladki_bahin.yaml"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 12,
+    "cache_creation_tokens": 36496,
+    "cache_read_tokens": 159182,
+    "output_tokens": 12412,
+    "api_call_count": 6
+  }
+}

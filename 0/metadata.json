@@ -1,0 +1,65 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JFNT0M069MG48K0FT9V50P",
+  "session_id": "52f63354-2b8e-4830-b217-ea567dc7f778",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T08:43:06.663248Z",
+  "branch": "niyam/job_20261010_d7619dd2",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/ladki_bahin/annual_income_limit.yaml",
+    "parameters/mh/ladki_bahin/disqualifying_govt_jobs.yaml",
+    "parameters/mh/ladki_bahin/eligible_marital_status.yaml",
+    "parameters/mh/ladki_bahin/max_age.yaml",
+    "parameters/mh/ladki_bahin/max_farm_land_acres.yaml",
+    "parameters/mh/ladki_bahin/min_age.yaml",
+    "parameters/mh/ladki_bahin/monthly_benefit_inr.yaml",
+    "parameters/mh/ladki_bahin/other_scheme_threshold_inr.yaml",
+    "schemes/mh/ladki_bahin.yaml",
+    "sources/index.yaml",
+    "tests/mh/ladki_bahin.yaml"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "4feb67ec0e59",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 12,
+    "cache_creation_tokens": 36496,
+    "cache_read_tokens": 159182,
+    "output_tokens": 12412,
+    "api_call_count": 6
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T08:43:06.6264519Z",
+    "agent_lines": 328,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 13,
+    "human_removed": 1,
+    "total_committed": 328,
+    "total_lines_changed": 342,
+    "agent_percentage": 95.90643274853801,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 13,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "sources/index.yaml": 13
+      },
+      "user_removed_per_file": {
+        "sources/index.yaml": 1
+      }
+    }
+  ]
+}
