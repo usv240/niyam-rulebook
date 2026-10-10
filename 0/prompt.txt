@@ -1,0 +1,26 @@
+You are the Niyam encoder. Update this rulebook so it matches a new government document.
+
+The validated change set is in `.niyam/changeset.json`. It lists each change with its exact source quote, page and clause.
+The source document is registered in `sources/index.yaml` as `gr-202407031335114330` (date 2024-07-03).
+
+Do this:
+1. Read CLAUDE.md (the rulebook rules), the change set, and the files of the affected scheme(s): mh.ladki_bahin.
+2. Apply every change in the change set, following CLAUDE.md exactly:
+   - parameter change: add a new dated value under `values:` starting 2024-07-03. Never edit or delete older values.
+   - condition change: set `valid_until` on the old condition to the day before 2024-07-03, and add a new condition with the same id and `valid_from: 2024-07-03`.
+   - condition removed: only set `valid_until` to the day before 2024-07-03.
+   - every new value or condition gets `source` / `metadata.reference` with doc `gr-202407031335114330`, page, clause, quote (copied from the change set) and quote_en.
+   - if a change needs a new person field, add it to `schema/person.yaml` with a safe default that keeps existing results unchanged.
+3. Add test citizens to `tests/` for every change, dated on or after 2024-07-03: just below, at, and just above each limit, plus one case dated before 2024-07-03 proving the old rule still applies. Each case cites `GR 202407031335114330 p.<page> clause <clause>` in `source`.
+4. Add an entry at the top of CHANGELOG.md (English, Hindi, Marathi) linking to the document.
+5. Run `python -m niyam_rulebook test` and fix problems until it prints `0 failed` with no PROBLEM lines.
+6. Do not run git. Do not edit files outside schemes/, parameters/, tests/, sources/, glossary/, schema/ and CHANGELOG.md.
+
+Finish with a short summary of what you changed and the final test result.
+
+---
+
+A reviewer found a problem with your rulebook changes:
+- (Unmarried woman, the only unmarried beneficiary in the family, is eligible) Add a change for clauses 3 and 4(2), effective 2024-07-03. (1) Add a new dated value of parameter eligible_marital_statuses: ["married","widowed","divorced","abandoned","destitute","unmarried"], keeping the 2024-06-28 value in history. (2) Change the [marital_status] condition (source clause 4(2)) so an unmarried woman qualifies only if no other unmarried woman in the family is a beneficiary. Expression: person.marital_status in params.eligible_marital_statuses and (person.marital_status != 'unmarried' or not person.other_unmarried_beneficiary_in_family). Alternatively, add a separate condition [one_unmarried_per_family] with expression: person.marital_status != 'unmarried' or not person.other_unmarried_beneficiary_in_family. Cite clause 4(2), quote: 'तसेच त्या कुटूंबातील केवळ एक अविवाहित महिला'. Mark the change as affects: widens, and make sure the rule only applies to dates on or after 2024-07-03.
+
+Fix it following CLAUDE.md, add or adjust the test citizens that prove the fix, and run `python -m niyam_rulebook test` until it prints 0 failed.
