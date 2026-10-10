@@ -1,0 +1,13 @@
+description: Monthly assistance paid to an eligible beneficiary (including a widow with no child)
+metadata:
+  unit: currency-INR
+values:
+  2019-09-01:
+    value: 1000
+    metadata:
+      reference:
+        doc: gr-201908211212469922
+        page: 3
+        clause: "State-sponsored scheme (1)"
+        quote: "रुपये४००/- इतकी वाढ करुन अर्थसहाय्याची रक्कम दरमहा रुपये १०००/- अशी करण्यात येत आहे."
+        quote_en: "increased by Rs 400/- so that the assistance amount becomes Rs 1000/- per month."
