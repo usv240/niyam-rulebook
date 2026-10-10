@@ -1,0 +1,30 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K1XF7MCNDZ4KH1R83ZY0ND",
+  "strategy": "manual-commit",
+  "branch": "niyam/job_20261010_a567a0ce",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "CHANGELOG.md",
+    "glossary/maharashtra.md",
+    "parameters/mh/ladki_bahin/monthly_benefit.yaml",
+    "sources/index.yaml",
+    "tests/mh/ladki_bahin.yaml"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 2999,
+    "cache_creation_tokens": 47720,
+    "cache_read_tokens": 698426,
+    "output_tokens": 10477,
+    "api_call_count": 10
+  }
+}

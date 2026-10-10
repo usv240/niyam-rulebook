@@ -1,0 +1,32 @@
+You are the Niyam encoder. Update this rulebook so it matches a new government document.
+
+The validated change set is in `.niyam/changeset.json`. It lists each change with its exact source quote, page and clause.
+The source document is registered in `sources/index.yaml` as `gr-92e236664737c118` (date 2025-03-15).
+
+Do this:
+1. Read CLAUDE.md (the rulebook rules), the change set, and the files of the affected scheme(s): mh.ladki_bahin.
+2. Apply every change in the change set, following CLAUDE.md exactly:
+   - parameter change: add a new dated value under `values:` starting 2025-04-01. Never edit or delete older values.
+   - condition change: set `valid_until` on the old condition to the day before 2025-04-01, and add a new condition with the same id and `valid_from: 2025-04-01`.
+   - condition removed: only set `valid_until` to the day before 2025-04-01.
+   - every new value or condition gets `source` / `metadata.reference` with doc `gr-92e236664737c118`, page, clause, quote (copied from the change set) and quote_en.
+   - if a change needs a new person field, add it to `schema/person.yaml` with a safe default that keeps existing results unchanged.
+3. Add test citizens to `tests/` for every change, dated on or after 2025-04-01: just below, at, and just above each limit, plus one case dated before 2025-04-01 proving the old rule still applies. Each case cites `GR 92e236664737c118 p.<page> clause <clause>` in `source`.
+4. Add an entry at the top of CHANGELOG.md (English, Hindi, Marathi) linking to the document.
+5. Run `python -m niyam_rulebook test` and fix problems until it prints `0 failed` with no PROBLEM lines.
+6. Do not run git. Do not edit files outside schemes/, parameters/, tests/, sources/, glossary/, schema/ and CHANGELOG.md.
+
+Finish with a short summary of what you changed and the final test result.
+
+---
+
+A reviewer found a problem with your rulebook changes:
+- (Exactly on effective date: new amount) Add a new dated value for parameter monthly_benefit: 2100, effective_from 2025-04-01 (clauses 1 and 2). Keep the old 1500 value from 2024-06-28 in history and do not edit it. Do not hold the change back because of the synthetic-document footer.
+- (After effective date typical case) Add monthly_benefit = 2100 effective 2025-04-01 (clauses 1 and 2), keeping the 1500 value in history.
+- (Other-scheme income Rs 1,000 after increase: top-up to 2,100) Set monthly_benefit = 2100 effective 2025-04-01 (clause 1). The existing top-up formula then gives 2100 - 1000 = 1100. Leave other_scheme_max_inr at 1500.
+- (Other-scheme income exactly 1,500 (unchanged limit) after increase) Set monthly_benefit = 2100 effective 2025-04-01 (clause 1). Keep other_scheme_max_inr = 1500 (clause 3). The top-up for this case is then 600.
+- (Age 60 still eligible after increase) Set monthly_benefit = 2100 effective 2025-04-01 (clauses 1 and 2). Leave age_max = 60 unchanged.
+- (Age 21 (lower bound) eligible after increase) Set monthly_benefit = 2100 effective 2025-04-01 (clauses 1 and 2). Leave age_min = 21 unchanged.
+- (Income exactly Rs 250,000 eligible after increase) Set monthly_benefit = 2100 effective 2025-04-01 (clauses 1 and 2). Leave income_ceiling = 250000 unchanged.
+
+Fix it following CLAUDE.md, add or adjust the test citizens that prove the fix, and run `python -m niyam_rulebook test` until it prints 0 failed.
