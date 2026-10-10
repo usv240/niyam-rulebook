@@ -1,0 +1,35 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K0YKKMEADDD3AT86QNFY5D",
+  "strategy": "manual-commit",
+  "branch": "niyam/job_20261010_77d4b1ba",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/ladki_bahin/max_age.yaml",
+    "parameters/mh/ladki_bahin/max_annual_family_income.yaml",
+    "parameters/mh/ladki_bahin/max_farm_land_acres.yaml",
+    "parameters/mh/ladki_bahin/min_age.yaml",
+    "parameters/mh/ladki_bahin/monthly_benefit_inr.yaml",
+    "parameters/mh/ladki_bahin/other_scheme_threshold_inr.yaml",
+    "schemes/mh/ladki_bahin.yaml",
+    "sources/index.yaml",
+    "tests/mh/ladki_bahin.yaml"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 22,
+    "cache_creation_tokens": 46777,
+    "cache_read_tokens": 317356,
+    "output_tokens": 14967,
+    "api_call_count": 11
+  }
+}
