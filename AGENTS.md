@@ -10,6 +10,7 @@ document. Wrong rules can stop people from receiving money they are owed.
 - `tests/<state>/<scheme>.yaml`: test citizens. Each case has `date`, `person`, `expect` and `source`.
 - `sources/index.yaml` and `sources/<state>/<code>.pdf`: the official documents.
 - `glossary/maharashtra.md`: how recurring legal phrases are interpreted.
+- `docs/FORMAT.md`: the file format with a complete example. Read it before creating a new scheme.
 - `schema/person.yaml`: the only facts rules may use. Never add personal identifiers.
 
 ## Rules for every change
