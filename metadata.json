@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JFGD3ZYHEW6N2CKT4CY8K7",
+  "strategy": "manual-commit",
+  "branch": "niyam/job_20261010_c8299b6a",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/ladki_bahin/age_max.yaml",
+    "parameters/mh/ladki_bahin/disqualifying_govt_jobs.yaml",
+    "parameters/mh/ladki_bahin/eligible_marital_statuses.yaml",
+    "schemes/mh/ladki_bahin.yaml",
+    "sources/index.yaml"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 22,
+    "cache_creation_tokens": 35374,
+    "cache_read_tokens": 330114,
+    "output_tokens": 11043,
+    "api_call_count": 11
+  }
+}
