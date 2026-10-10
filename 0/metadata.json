@@ -1,0 +1,57 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JFRDK1SX6ADTYRY41TNA0C",
+  "session_id": "8082c876-54fb-45c0-b410-53588537ab54",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T08:44:32.1076519Z",
+  "branch": "niyam/job_20261010_1e7b6f02",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/ladki_bahin/monthly_benefit.yaml",
+    "sources/index.yaml",
+    "tests/mh/ladki_bahin.yaml"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "50772605e06b",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 12,
+    "cache_creation_tokens": 22417,
+    "cache_read_tokens": 120701,
+    "output_tokens": 3976,
+    "api_call_count": 6
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T08:44:32.0838598Z",
+    "agent_lines": 34,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 45,
+    "human_removed": 11,
+    "total_committed": 52,
+    "total_lines_changed": 90,
+    "agent_percentage": 37.77777777777778,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 27,
+      "user_lines_removed": 11,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "sources/index.yaml": 27
+      },
+      "user_removed_per_file": {
+        "sources/index.yaml": 11
+      }
+    }
+  ]
+}
