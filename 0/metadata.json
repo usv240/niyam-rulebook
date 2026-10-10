@@ -1,0 +1,60 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JDH944E4HPRCA4WKDJTFN7",
+  "session_id": "7e6e8071-f488-4943-8dd3-bdb0919dff07",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T08:05:41.1715946Z",
+  "branch": "niyam/job_20261010_bd059543",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/ladki_bahin/age_max.yaml",
+    "parameters/mh/ladki_bahin/disqualifying_govt_jobs.yaml",
+    "parameters/mh/ladki_bahin/eligible_marital_statuses.yaml",
+    "schemes/mh/ladki_bahin.yaml",
+    "sources/index.yaml",
+    "tests/mh/ladki_bahin.yaml"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "15e59d616c6b",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 20,
+    "cache_creation_tokens": 33369,
+    "cache_read_tokens": 279131,
+    "output_tokens": 9095,
+    "api_call_count": 10
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T08:05:41.134796Z",
+    "agent_lines": 181,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 25,
+    "human_removed": 11,
+    "total_committed": 181,
+    "total_lines_changed": 217,
+    "agent_percentage": 83.41013824884793,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 25,
+      "user_lines_removed": 11,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "sources/index.yaml": 25
+      },
+      "user_removed_per_file": {
+        "sources/index.yaml": 11
+      }
+    }
+  ]
+}
