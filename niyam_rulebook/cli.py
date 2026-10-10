@@ -124,10 +124,10 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(out, ensure_ascii=False))
         return 0
     if args.cmd == "rules":
-        print(json.dumps(rb.rules_at(args.scheme, args.date), ensure_ascii=False, indent=2))
+        print(json.dumps(rb.rules_at(args.scheme, args.date), ensure_ascii=False, indent=2, default=str))
         return 0
     if args.cmd == "snapshot":
-        text = json.dumps(snapshot(rb), ensure_ascii=False, indent=2)
+        text = json.dumps(snapshot(rb), ensure_ascii=False, indent=2, default=str)
         if args.out:
             Path(args.out).write_text(text, encoding="utf-8")
         else:
