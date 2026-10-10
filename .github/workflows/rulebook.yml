@@ -1,0 +1,31 @@
+name: rulebook
+
+# Every rule change, including every pull request opened by the Niyam agent,
+# must pass validation and every test citizen before it can be merged.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Validate rule files (sources, dates, expressions)
+        run: python -m niyam_rulebook check
+      - name: Run every test citizen
+        run: python -m niyam_rulebook test
+      - name: Every condition and value cites its source
+        run: |
+          python - <<'PY'
+          from niyam_rulebook import Rulebook
+          rb = Rulebook()
+          missing = [f"{s}.{c.id}" for s, sc in rb.schemes.items() for c in sc.conditions if not c.source.get("quote")]
+          assert not missing, f"conditions without a source quote: {missing}"
+          print(f"{sum(len(s.conditions) for s in rb.schemes.values())} conditions, all sourced")
+          PY
