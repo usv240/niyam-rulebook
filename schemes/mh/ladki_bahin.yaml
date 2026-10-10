@@ -1,0 +1,169 @@
+id: mh.ladki_bahin
+name: Mukhyamantri Majhi Ladki Bahin Yojana
+name_mr: मुख्यमंत्री माझी लाडकी बहीण योजना
+name_hi: मुख्यमंत्री माझी लाडकी बहीण योजना
+department: Women and Child Development Department, Government of Maharashtra
+summary: Monthly money transfer to women from low-income families in Maharashtra, to support their financial independence, health and nutrition.
+launched: 2024-06-28
+apply_url: https://ladakibahin.maharashtra.gov.in/
+benefit:
+  # GR 2024-06-28, para 2: Rs 1,500 per month; if the woman already gets less than
+  # Rs 1,500 from another scheme, this scheme pays the difference.
+  monthly_inr: "max(0, params.monthly_benefit - person.other_scheme_monthly_inr)"
+  source:
+    doc: gr-202406281814018230
+    page: 2
+    clause: "2"
+    quote: "दरमहा रु.1,500/- इतकी रक्कम दिली जाईल"
+    quote_en: "An amount of Rs 1,500 per month will be given"
+
+conditions:
+  - id: resident
+    text: Lives in Maharashtra
+    when: "person.state == 'MH'"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "4(1)"
+      quote: "लाभार्थी महिला महाराष्ट्र राज्याचे रहिवाशी असणे आवश्यक आहे"
+      quote_en: "The beneficiary woman must be a resident of Maharashtra"
+
+  - id: woman
+    text: Is a woman
+    when: "person.gender == 'female'"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "3"
+      quote: "विवाहित, विधवा, घटस्फोटित, परित्यक्त्या आणि निराधार महिला"
+      quote_en: "Married, widowed, divorced, abandoned and destitute women"
+
+  - id: marital_status
+    text: "Marital status is one of: {eligible_marital_statuses}"
+    when: "person.marital_status in params.eligible_marital_statuses"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "4(2)"
+      quote: "राज्यातील विवाहित, विधवा, घटस्फोटित, परित्यक्त्या आणि निराधार महिला"
+      quote_en: "Married, widowed, divorced, abandoned and destitute women of the state"
+
+  - id: age
+    text: "Aged {age_min} to {age_max} (completed years)"
+    when: "params.age_min <= person.age <= params.age_max"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "4(3)"
+      quote: "किमान वयाची 21 वर्षे पूर्ण व कमाल वयाची 60 वर्ष पूर्ण होईपर्यंत"
+      quote_en: "Minimum age of 21 years completed, and until the maximum age of 60 years is completed"
+
+  - id: bank_account
+    text: Has a bank account
+    when: "person.has_bank_account"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "4(4)"
+      quote: "लाभार्थ्यांचे बँक खाते असणे आवश्यक आहे"
+      quote_en: "The beneficiary must have a bank account"
+
+  - id: income
+    text: "Annual family income is not more than Rs {income_ceiling}"
+    when: "person.annual_family_income <= params.income_ceiling"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "4(5), 5(1)"
+      quote: "लाभार्थी कुटुंबाचे वार्षिक उत्पन्न रक्कम रु.2.50 लाखापेक्षा जास्त नसावे"
+      quote_en: "The annual income of the beneficiary family should not be more than Rs 2.50 lakh"
+
+  - id: no_income_tax_payer
+    kind: disqualification
+    text: No one in the family pays income tax
+    when: "not person.family_income_tax_payer"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "5(2)"
+      quote: "ज्याच्या कुटुंबातील सदस्य आयकरदाता आहे"
+      quote_en: "Whose family member is an income tax payer"
+
+  - id: no_government_job
+    kind: disqualification
+    text: "No family member holds a government job of type: {disqualifying_govt_jobs}"
+    when: "person.family_govt_job not in params.disqualifying_govt_jobs"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "5(3)"
+      quote: "नियमित/कायम कर्मचारी/कंत्राटी कर्मचारी म्हणून सरकारी विभाग/उपक्रम/मंडळ/भारत सरकार किंवा राज्य सरकारच्या स्थानिक संस्थेमध्ये कार्यरत आहेत किंवा सेवानिवृत्तीनंतर निवृत्तीवेतन घेत आहेत"
+      quote_en: "Working as regular, permanent or contract employees in a government department, undertaking, board, the Government of India or a local body of the state government, or drawing a pension after retirement"
+
+  - id: other_scheme_limit
+    kind: disqualification
+    text: "Does not receive more than Rs {other_scheme_max_inr} a month from other government schemes"
+    when: "person.other_scheme_monthly_inr <= params.other_scheme_max_inr"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "5(4)"
+      quote: "आर्थिक योजनेव्दारे रु.1,500/- पेक्षा जास्त लाभ घेतला असेल"
+      quote_en: "Has received a benefit of more than Rs 1,500 through a financial scheme"
+
+  - id: no_mp_mla
+    kind: disqualification
+    text: No family member is a current or former MP or MLA
+    when: "not person.family_mp_mla"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "5(5)"
+      quote: "ज्यांच्या कुटुंबातील सदस्य विद्यमान किंवा माजी खासदार/आमदार आहे"
+      quote_en: "Whose family member is a current or former MP or MLA"
+
+  - id: no_board_office
+    kind: disqualification
+    text: No family member is chair, vice chair, director or member of a government board or corporation
+    when: "not person.family_govt_board_office"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "5(6)"
+      quote: "बोर्ड/कॉर्पोरेशन/बोर्ड/उपक्रमाचे अध्यक्ष/उपाध्यक्ष/संचालक/सदस्य आहेत"
+      quote_en: "Are chair, vice chair, director or member of a board, corporation or undertaking"
+
+  - id: farm_land_limit
+    kind: disqualification
+    text: "The family does not jointly own more than {farm_land_max_acres} acres of farm land"
+    when: "person.family_farm_land_acres <= params.farm_land_max_acres"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "5(7)"
+      quote: "ज्यांच्या कुटुंबातील सदस्यांची संयुक्तपणे पाच एकरपेक्षा जास्त शेतजमीन आहे"
+      quote_en: "Whose family members jointly own more than five acres of farm land"
+
+  - id: no_four_wheeler
+    kind: disqualification
+    text: No four-wheeler (other than a tractor) is registered to a family member
+    when: "not person.family_four_wheeler"
+    valid_from: 2024-06-28
+    source:
+      doc: gr-202406281814018230
+      page: 2
+      clause: "5(8)"
+      quote: "ज्यांच्याकडे चारचाकी वाहने (ट्रॅक्टर वगळून) त्यांच्या कुटुंबातील सदस्यांच्या नावावर नोंदणीकृत आहेत"
+      quote_en: "Who have four-wheelers (excluding tractors) registered in the names of their family members"

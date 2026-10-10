@@ -1,0 +1,13 @@
+description: Maximum age in completed years
+metadata:
+  unit: year
+values:
+  2024-06-28:
+    value: 60
+    metadata:
+      reference:
+        doc: gr-202406281814018230
+        page: 2
+        clause: "4(3)"
+        quote: "कमाल वयाची 60 वर्ष पूर्ण होईपर्यंत"
+        quote_en: "Until the maximum age of 60 years is completed"

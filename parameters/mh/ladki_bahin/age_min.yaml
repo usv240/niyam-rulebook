@@ -1,0 +1,13 @@
+description: Minimum age in completed years
+metadata:
+  unit: year
+values:
+  2024-06-28:
+    value: 21
+    metadata:
+      reference:
+        doc: gr-202406281814018230
+        page: 2
+        clause: "4(3)"
+        quote: "किमान वयाची 21 वर्षे पूर्ण"
+        quote_en: "Minimum age of 21 years completed"

@@ -1,0 +1,13 @@
+description: Government job types held by a family member that disqualify the applicant
+metadata:
+  unit: category
+values:
+  2024-06-28:
+    value: [regular, contract, pensioner]
+    metadata:
+      reference:
+        doc: gr-202406281814018230
+        page: 2
+        clause: "5(3)"
+        quote: "नियमित/कायम कर्मचारी/कंत्राटी कर्मचारी"
+        quote_en: "Regular, permanent or contract employees"

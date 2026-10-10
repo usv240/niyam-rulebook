@@ -1,0 +1,13 @@
+description: Monthly benefit paid to an eligible woman
+metadata:
+  unit: currency-INR
+values:
+  2024-06-28:
+    value: 1500
+    metadata:
+      reference:
+        doc: gr-202406281814018230
+        page: 2
+        clause: "2"
+        quote: "दरमहा रु.1,500/- इतकी रक्कम दिली जाईल"
+        quote_en: "An amount of Rs 1,500 per month will be given"

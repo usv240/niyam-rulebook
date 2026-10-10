@@ -1,0 +1,13 @@
+description: Highest monthly amount from other schemes that still allows the benefit
+metadata:
+  unit: currency-INR
+values:
+  2024-06-28:
+    value: 1500
+    metadata:
+      reference:
+        doc: gr-202406281814018230
+        page: 2
+        clause: "5(4)"
+        quote: "रु.1,500/- पेक्षा जास्त लाभ घेतला असेल"
+        quote_en: "Has received a benefit of more than Rs 1,500"

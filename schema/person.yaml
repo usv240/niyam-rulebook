@@ -1,0 +1,68 @@
+# Facts about a person that rules may use. Never add names, ID numbers,
+# phone numbers or addresses: Niyam does not need them and must not store them.
+fields:
+  age:
+    type: int
+    default: null
+    label: Age in completed years
+  gender:
+    type: enum
+    values: [female, male, other]
+    default: null
+    label: Gender
+  state:
+    type: enum
+    values: [MH, other]
+    default: MH
+    label: State of residence
+  marital_status:
+    type: enum
+    values: [married, widowed, divorced, abandoned, destitute, unmarried]
+    default: married
+    label: Marital status
+  other_unmarried_beneficiary_in_family:
+    type: bool
+    default: false
+    label: Another unmarried woman in the family already receives this benefit
+  annual_family_income:
+    type: number
+    default: 0
+    label: Annual family income in rupees
+  family_income_tax_payer:
+    type: bool
+    default: false
+    label: Someone in the family pays income tax
+  family_govt_job:
+    type: enum
+    values: [none, regular, contract, outsourced, volunteer, pensioner]
+    default: none
+    label: Government job held by a family member
+  has_bank_account:
+    type: bool
+    default: true
+    label: Has a bank account
+  other_scheme_monthly_inr:
+    type: number
+    default: 0
+    label: Monthly amount already received from other government schemes, in rupees
+  family_mp_mla:
+    type: bool
+    default: false
+    label: A family member is a current or former MP or MLA
+  family_govt_board_office:
+    type: bool
+    default: false
+    label: A family member is chair, vice chair, director or member of a government board or corporation
+  family_farm_land_acres:
+    type: number
+    default: 0
+    label: Farm land owned jointly by the family, in acres
+  family_four_wheeler:
+    type: bool
+    default: false
+    label: A four-wheeler (not a tractor) is registered to a family member
+  ration_card:
+    type: enum
+    values: [none, yellow, orange, white]
+    default: none
+    label: Ration card colour

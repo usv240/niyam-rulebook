@@ -1,0 +1,13 @@
+description: Maximum farm land jointly owned by the family
+metadata:
+  unit: acre
+values:
+  2024-06-28:
+    value: 5
+    metadata:
+      reference:
+        doc: gr-202406281814018230
+        page: 2
+        clause: "5(7)"
+        quote: "संयुक्तपणे पाच एकरपेक्षा जास्त शेतजमीन आहे"
+        quote_en: "Jointly own more than five acres of farm land"
