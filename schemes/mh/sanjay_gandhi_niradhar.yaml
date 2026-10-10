@@ -1,0 +1,73 @@
+id: mh.sanjay_gandhi_niradhar
+name: Sanjay Gandhi Niradhar Anudan Yojana
+name_mr: संजय गांधी निराधार अनुदान योजना
+department: Government of Maharashtra
+summary: Monthly financial assistance for destitute and vulnerable residents of Maharashtra who meet the income, age and residence conditions; widows with children get a higher amount.
+launched: 2019-09-01               # the revised rules apply from this date (GR dated 2019-08-20)
+benefit:
+  # GR 2019-08-20, page 3: Rs 1,000 per month; widows with 1 child get Rs 1,100 and
+  # widows with 2 or more children get Rs 1,200 (Appendix-1, row 4(1)).
+  monthly_inr: "params.monthly_benefit_widow_two_or_more_children if (person.marital_status == 'widowed' and person.children_count >= 2) else (params.monthly_benefit_widow_one_child if (person.marital_status == 'widowed' and person.children_count == 1) else params.monthly_benefit)"
+  source:
+    doc: gr-201908211212469922
+    page: 3
+    clause: "State-sponsored scheme (1)"
+    quote: "रुपये४००/- इतकी वाढ करुन अर्थसहाय्याची रक्कम दरमहा रुपये १०००/- अशी करण्यात येत आहे."
+    quote_en: "increased by Rs 400/- so that the assistance amount becomes Rs 1000/- per month."
+
+conditions:
+  - id: residency_maharashtra
+    text: Has lived in Maharashtra for at least 15 years
+    when: "person.state == 'MH' and person.years_in_maharashtra >= 15"
+    valid_from: 2019-09-01
+    source:
+      doc: gr-201908211212469922
+      page: 11
+      clause: "Appendix-1 row 1"
+      quote: "किमान १५ वर्षापासून महाराष्ट्र राज्याचा रहिवासी असणे आवश्यक आहे."
+      quote_en: "Must have been a resident of the State of Maharashtra for at least 15 years."
+
+  - id: age_min
+    text: Aged 18 or more (completed years)
+    when: "person.age >= 18"
+    valid_from: 2019-09-01
+    source:
+      doc: gr-201908211212469922
+      page: 11
+      clause: "Appendix-1 row 2"
+      quote: "किमान १८ ते ६५ वर्षापेक्षा कमी असावे."
+      quote_en: "At least 18 and less than 65 years."
+
+  - id: age_max
+    text: Younger than 65 years (at 65 the beneficiary moves to Shravanbal or the Indira Gandhi old age scheme)
+    when: "person.age < 65"
+    valid_from: 2019-09-01
+    source:
+      doc: gr-201908211212469922
+      page: 11
+      clause: "Appendix-1 row 2"
+      quote: "किमान १८ ते ६५ वर्षापेक्षा कमी असावे."
+      quote_en: "At least 18 and less than 65 years."
+
+  - id: income
+    text: "Annual family income is not more than Rs {annual_family_income_max} (Rs {annual_family_income_max_disabled} for disabled beneficiaries)"
+    when: "person.annual_family_income <= params.annual_family_income_max or (person.disabled and person.annual_family_income <= params.annual_family_income_max_disabled)"
+    valid_from: 2019-09-01
+    source:
+      doc: gr-201908211212469922
+      page: 11
+      clause: "Appendix-1 row 3"
+      quote: "तर इतर सर्व लाभार्थ्यांकरीता रुपये २१,०००/- पर्यंत"
+      quote_en: "and for all other beneficiaries up to Rs 21,000/-"
+
+  - id: no_other_regular_scheme_benefit
+    kind: disqualification
+    text: Does not receive a regular monthly benefit from another government scheme
+    when: "person.other_scheme_monthly_inr == 0"
+    valid_from: 2019-09-01
+    source:
+      doc: gr-201908211212469922
+      page: 14
+      clause: "Appendix-1 row 15"
+      quote: "शासनाच्या अन्य कोणत्याही योजनेखाली नियमित मासिक आर्थिक लाभ घेत असलेली व्यक्ती संजय गांधी निराधार अनुदान योजनेखाली लाभ घेण्यास पात्र राहणार नाही."
+      quote_en: "A person receiving a regular monthly financial benefit under any other government scheme will not be eligible under the Sanjay Gandhi Niradhar Anudan Yojana."

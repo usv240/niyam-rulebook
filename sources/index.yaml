@@ -1,11 +1,41 @@
 gr-202406281814018230:
   kind: government_resolution
-  code: "202406281814018230"
-  number: "मबाव 2024/प्र.क्र.96/कार्या-2"
+  code: '202406281814018230'
+  number: मबाव 2024/प्र.क्र.96/कार्या-2
   date: 2024-06-28
   department: Women and Child Development Department, Government of Maharashtra
-  title_mr: महाराष्ट्र राज्यात "मुख्यमंत्री-माझी लाडकी बहीण" योजना सुरु करण्यास मान्यता देण्याबाबत
+  title_mr: महाराष्ट्र राज्यात "मुख्यमंत्री-माझी लाडकी बहीण" योजना सुरु करण्यास मान्यता
+    देण्याबाबत
   title_en: Approval to start the "Mukhyamantri Majhi Ladki Bahin" scheme in Maharashtra
   url: https://gr.maharashtra.gov.in/Site/Upload/Government%20Resolutions/Marathi/202406281814018230.pdf
   local: sources/mh/202406281814018230.pdf
   language: mr
+gr-201908211212469922:
+  kind: government_resolution
+  code: '201908211212469922'
+  date: '2019-08-20'
+  department: Government of Maharashtra
+  title_mr: 'विशेष सहाय्य योजना: संजय गांधी निराधार अनुदान योजना, श्रावणबाळ सेवा राज्य
+    निवृत्तीवेतन योजना, इंदिरा गांधी राष्ट्रीय वृध्दापकाळ, विधवा व अपंग निवृत्तीवेतन
+    योजना'
+  title_en: 'Special Assistance Schemes (Sanjay Gandhi Niradhar Anudan, Shravanbal
+    Seva State, and Indira Gandhi National Old Age, Widow and Disability Pension Schemes):
+    revised assistance and consolidated eligibility conditions'
+  url: https://gr.maharashtra.gov.in/Site/Upload/Government%20Resolutions/Marathi/201908211212469922.pdf
+  local: sources/mh/201908211212469922.pdf
+  language: mr
+  amends:
+  - विसयो-2010/प्र.क्र.175/विसयो-2 दि. 26 ऑक्टोबर 2010
+  - विसयो-2011/प्र.क्र.127/विसयो-2 दि. 31 ऑक्टोबर 2011
+  - विसयो-2012/प्र.क्र.102/विसयो-2 दि. 02 एप्रिल 2012
+  - विसयो-2011/प्र.क्र.226/विसयो-2 दि. 12 जून 2013
+  - विसयो-2013/प्र.क्र.464/विसयो-1 दि. 27 जून 2013
+  - विसयो-2013/प्र.क्र.206/विसयो-2 दि. 21 जानेवारी 2014
+  - समिती-2014/प्र.क्र.162/विसयो-2 दि. 27 नोव्हेंबर 2014
+  - विसयो-2015/प्र.क्र.105/विसयो-2 दि. 05 मे 2015
+  - विसयो-2014/प्र.क्र.26/विसयो-2 दि. 22 जून 2015
+  - विसयो-2015/प्र.क्र.94/विसयो-2 दि. 04 ऑगस्ट 2015
+  - विसयो-2015/प्र.क्र.285/विसयो-2 दि. 13 ऑक्टोबर 2015
+  - विसयो-2015/प्र.क्र.275/विसयो-2 दि. 05 जानेवारी 2016
+  - विसयो-2017/प्र.क्र.203/विसयो दि. 03 नोव्हेंबर 2018
+  - विसयो-2016/प्र.क्र.232/विसयो दि. 11 जून 2019

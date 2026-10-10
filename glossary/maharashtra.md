@@ -31,3 +31,7 @@ government job, land, vehicle) as reported by the applicant for her household.
 A GR applies from its own date unless it states another start date.
 A change to an earlier GR keeps the earlier value in history (a new dated value
 is added; old values are never edited).
+
+## "रुपये N पर्यंत" (up to Rs N)
+Inclusive upper limit: a value equal to N qualifies, and a value above N does not (for example Rs 21,001 against a Rs 21,000 limit).
+Source: GR 201908211212469922, Appendix-1 row 3, income "रुपये २१,०००/- पर्यंत".

@@ -1,0 +1,13 @@
+description: Monthly assistance paid to a widow beneficiary with 2 or more children
+metadata:
+  unit: currency-INR
+values:
+  2019-09-01:
+    value: 1200
+    metadata:
+      reference:
+        doc: gr-201908211212469922
+        page: 11
+        clause: "Appendix-1 row 4(1)"
+        quote: "२ अपत्य (२ व त्यापेक्षा अधिक अपत्य) असलेल्या विधवा लाभार्थ्यांना मिळणाऱ्या दरमहा रुपये १२००/-"
+        quote_en: "Widow beneficiaries with 2 children (2 or more children) will receive Rs 1200/- per month"

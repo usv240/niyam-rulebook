@@ -1,0 +1,13 @@
+description: Maximum annual family income in rupees for beneficiaries other than disabled persons
+metadata:
+  unit: currency-INR
+values:
+  2019-09-01:
+    value: 21000
+    metadata:
+      reference:
+        doc: gr-201908211212469922
+        page: 11
+        clause: "Appendix-1 row 3"
+        quote: "तर इतर सर्व लाभार्थ्यांकरीता रुपये २१,०००/- पर्यंत"
+        quote_en: "and for all other beneficiaries up to Rs 21,000/-"
