@@ -76,6 +76,8 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("simulate", help="evaluate one person")
     s.add_argument("person", help="JSON object, or @file.json")
     s.add_argument("--date")
+    sb = sub.add_parser("simulate-batch", help="evaluate many cases from a JSON list file")
+    sb.add_argument("file", help="JSON list of {person, date, scheme}")
     r = sub.add_parser("rules", help="show the rules of a scheme on a date")
     r.add_argument("scheme")
     r.add_argument("--date")
@@ -110,6 +112,16 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "simulate":
         raw = Path(args.person[1:]).read_text(encoding="utf-8") if args.person.startswith("@") else args.person
         print(json.dumps(rb.evaluate(json.loads(raw), args.date), ensure_ascii=False, indent=2))
+        return 0
+    if args.cmd == "simulate-batch":
+        out = []
+        for case in json.loads(Path(args.file).read_text(encoding="utf-8")):
+            try:
+                res = rb.evaluate(case["person"], case.get("date"), schemes=[case["scheme"]] if case.get("scheme") else None)
+                out.append({"ok": True, "result": res})
+            except Exception as e:  # report bad cases instead of failing the batch
+                out.append({"ok": False, "error": str(e)})
+        print(json.dumps(out, ensure_ascii=False))
         return 0
     if args.cmd == "rules":
         print(json.dumps(rb.rules_at(args.scheme, args.date), ensure_ascii=False, indent=2))
