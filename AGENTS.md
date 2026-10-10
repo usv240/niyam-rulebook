@@ -21,3 +21,10 @@ document. Wrong rules can stop people from receiving money they are owed.
 6. Add a plain-language entry at the top of `CHANGELOG.md` in English, Hindi and Marathi.
 7. Only edit files inside `schemes/`, `parameters/`, `tests/`, `sources/`, `glossary/`, `schema/` and `CHANGELOG.md`.
 8. Rule expressions may only use `person.<field>`, `params.<name>`, comparisons, `and`, `or`, `not`, arithmetic, lists, and `min`, `max`, `abs`, `len`.
+
+<!-- entire-graph:begin -->
+This repo has the entire-graph code graph installed. Before exploring code with
+grep/find/whole-file reads, read .entire/graph-agent.md — resolution-first guidance
+for using graph retrieval, focused source inspection, and verification.
+@.entire/graph-agent.md
+<!-- entire-graph:end -->
