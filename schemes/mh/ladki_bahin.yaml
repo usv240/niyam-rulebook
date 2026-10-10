@@ -14,8 +14,8 @@ benefit:
     doc: gr-202406281814018230
     page: 2
     clause: "2"
-    quote: "दरमहा रु.1,500/- इतकी रक्कम दिली जाईल"
-    quote_en: "An amount of Rs 1,500 per month will be given"
+    quote: "दरमहा रु.1,500/- इतकी रक्कम दिली जाईल. तसेच केंद्र/राज्य शासनाच्या अन्य आर्थिक लाभाच्या योजनेव्दारे रु.1,500/- पेक्षा कमी लाभ घेत असेल तर फरकाची रक्कम या योजनेव्दारे पात्र महिलेस देण्यात येईल"
+    quote_en: "An amount of Rs 1,500 per month will be given. If she receives less than Rs 1,500 through another financial scheme of the central or state government, the difference will be paid to the eligible woman through this scheme"
 
 conditions:
   - id: resident
