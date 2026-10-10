@@ -159,3 +159,136 @@ cases:
     person: {<<: *base, family_four_wheeler: true}
     expect: {eligible: false}
     source: GR 202406281814018230 p.2 clause 5(8)
+
+  # ---- GR 2024-07-03 amendments ----
+
+  # c1: maximum age 60 -> 65
+  - name: age 64 is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, age: 64}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 4(3)
+
+  - name: age 65 is eligible after the amendment (upper boundary)
+    date: 2024-07-03
+    person: {<<: *base, age: 65}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 4(3)
+
+  - name: age 66 is not eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, age: 66}
+    expect: {eligible: false}
+    source: GR 202407031335114330 p.2 clause 4(3)
+
+  - name: age 61 is still not eligible the day before the amendment
+    date: 2024-07-02
+    person: {<<: *base, age: 61}
+    expect: {eligible: false}
+    source: GR 202406281814018230 p.2 clause 4(3); GR 202407031335114330 p.2 clause 4(3)
+
+  # c2 and c3: unmarried women, one per family
+  - name: unmarried woman is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, marital_status: unmarried}
+    expect: {eligible: true, monthly_inr: 1500}
+    source: GR 202407031335114330 p.2 clause 4(2)
+
+  - name: second unmarried woman in the family is not eligible
+    date: 2024-07-03
+    person: {<<: *base, marital_status: unmarried, other_unmarried_beneficiary_in_family: true}
+    expect: {eligible: false}
+    source: GR 202407031335114330 p.2 clause 4(2) "only one unmarried woman"
+
+  - name: married woman is unaffected by the one-unmarried-per-family rule
+    date: 2024-07-03
+    person: {<<: *base, other_unmarried_beneficiary_in_family: true}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 4(2)
+
+  - name: unmarried woman is still not eligible the day before the amendment
+    date: 2024-07-02
+    person: {<<: *base, marital_status: unmarried}
+    expect: {eligible: false}
+    source: GR 202406281814018230 p.2 clause 4(2); GR 202407031335114330 p.2 clause 4(2)
+
+  # c4: contract staff no longer disqualify
+  - name: contract employee in family is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, family_govt_job: contract}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 5(3)
+
+  - name: volunteer worker in family is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, family_govt_job: volunteer}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 5(3)
+
+  - name: regular employee in family is still not eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, family_govt_job: regular}
+    expect: {eligible: false}
+    source: GR 202407031335114330 p.2 clause 5(3)
+
+  - name: pensioner in family is still not eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, family_govt_job: pensioner}
+    expect: {eligible: false}
+    source: GR 202407031335114330 p.2 clause 5(3)
+
+  - name: contract employee in family is still not eligible the day before the amendment
+    date: 2024-07-02
+    person: {<<: *base, family_govt_job: contract}
+    expect: {eligible: false}
+    source: GR 202406281814018230 p.2 clause 5(3); GR 202407031335114330 p.2 clause 5(3)
+
+  # c5: Rs 1,500 or more from other schemes now disqualifies
+  - name: receives Rs 1,499 from another scheme is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, other_scheme_monthly_inr: 1499}
+    expect: {eligible: true, monthly_inr: 1}
+    source: GR 202407031335114330 p.2 clause 5(4)
+
+  - name: receives exactly Rs 1,500 from another scheme is not eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, other_scheme_monthly_inr: 1500}
+    expect: {eligible: false}
+    source: GR 202407031335114330 p.2 clause 5(4) "Rs 1,500 per month or more"
+
+  - name: receives Rs 1,501 from another scheme is not eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, other_scheme_monthly_inr: 1501}
+    expect: {eligible: false}
+    source: GR 202407031335114330 p.2 clause 5(4)
+
+  - name: receives exactly Rs 1,500 from another scheme is still eligible the day before the amendment
+    date: 2024-07-02
+    person: {<<: *base, other_scheme_monthly_inr: 1500}
+    expect: {eligible: true, monthly_inr: 0}
+    source: GR 202406281814018230 p.2 clause 5(4); GR 202407031335114330 p.2 clause 5(4)
+
+  # c6: farm land disqualification removed
+  - name: 5 acres of farm land is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, family_farm_land_acres: 5}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 5(7)
+
+  - name: 5.5 acres of farm land is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, family_farm_land_acres: 5.5}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 5(7)
+
+  - name: 20 acres of farm land is eligible after the amendment
+    date: 2024-07-03
+    person: {<<: *base, family_farm_land_acres: 20}
+    expect: {eligible: true}
+    source: GR 202407031335114330 p.2 clause 5(7)
+
+  - name: 5.5 acres of farm land is still not eligible the day before the amendment
+    date: 2024-07-02
+    person: {<<: *base, family_farm_land_acres: 5.5}
+    expect: {eligible: false}
+    source: GR 202406281814018230 p.2 clause 5(7); GR 202407031335114330 p.2 clause 5(7)

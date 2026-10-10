@@ -11,3 +11,12 @@ values:
         clause: "4(2)"
         quote: "विवाहित, विधवा, घटस्फोटित, परित्यक्त्या आणि निराधार महिला"
         quote_en: "Married, widowed, divorced, abandoned and destitute women"
+  2024-07-03:
+    value: [married, widowed, divorced, abandoned, destitute, unmarried]
+    metadata:
+      reference:
+        doc: gr-202407031335114330
+        page: 2
+        clause: "4(2)"
+        quote: "अ.क्र. (२) राज्यातील विवाहित, विधवा, घटस्फोटित, परित्यक्त्या आणि निराधार महिला तसेच त्या कुटूंबातील केवळ एक अविवाहित महिला."
+        quote_en: "Sr. No. (2) Married, widowed, divorced, abandoned and destitute women of the state, as well as only one unmarried woman from that family."

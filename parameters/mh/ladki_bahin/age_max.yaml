@@ -11,3 +11,12 @@ values:
         clause: "4(3)"
         quote: "कमाल वयाची 60 वर्ष पूर्ण होईपर्यंत"
         quote_en: "Until the maximum age of 60 years is completed"
+  2024-07-03:
+    value: 65
+    metadata:
+      reference:
+        doc: gr-202407031335114330
+        page: 2
+        clause: "4(3)"
+        quote: "किमान वयाची २१ वर्षे पूर्ण व कमाल वयाची ६५ वर्ष पूर्ण होईपर्यंत."
+        quote_en: "Sr. No. (3) Minimum age 21 years completed and maximum age until 65 years are completed."
