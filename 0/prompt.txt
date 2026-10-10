@@ -1,0 +1,19 @@
+You are the Niyam encoder. Update this rulebook so it matches a new government document.
+
+The validated change set is in `.niyam/changeset.json`. It lists each change with its exact source quote, page and clause.
+The source document is registered in `sources/index.yaml` as `gr-202307061137387522` (date 2023-07-05).
+
+Do this:
+1. Read CLAUDE.md (the rulebook rules), the change set, and the files of the affected scheme(s): mh.sanjay_gandhi_niradhar.
+2. Apply every change in the change set, following CLAUDE.md exactly:
+   - parameter change: add a new dated value under `values:` starting 2023-07-05. Never edit or delete older values.
+   - condition change: set `valid_until` on the old condition to the day before 2023-07-05, and add a new condition with the same id and `valid_from: 2023-07-05`.
+   - condition removed: only set `valid_until` to the day before 2023-07-05.
+   - every new value or condition gets `source` / `metadata.reference` with doc `gr-202307061137387522`, page, clause, quote (copied from the change set) and quote_en.
+   - if a change needs a new person field, add it to `schema/person.yaml` with a safe default that keeps existing results unchanged.
+3. Add test citizens to `tests/` for every change, dated on or after 2023-07-05: just below, at, and just above each limit, plus one case dated before 2023-07-05 proving the old rule still applies. Each case cites `GR 202307061137387522 p.<page> clause <clause>` in `source`.
+4. Add an entry at the top of CHANGELOG.md (English, Hindi, Marathi) linking to the document.
+5. Run `python -m niyam_rulebook test` and fix problems until it prints `0 failed` with no PROBLEM lines.
+6. Do not run git. Do not edit files outside schemes/, parameters/, tests/, sources/, glossary/, schema/ and CHANGELOG.md.
+
+Finish with a short summary of what you changed and the final test result.
