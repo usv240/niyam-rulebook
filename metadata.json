@@ -1,0 +1,32 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4KE4N65FT7MYWA8KF55V4X8",
+  "strategy": "manual-commit",
+  "branch": "niyam/job_20261010_743d13b0",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/sanjay_gandhi_niradhar/monthly_benefit.yaml",
+    "parameters/mh/sanjay_gandhi_niradhar/monthly_benefit_widow_one_child.yaml",
+    "parameters/mh/sanjay_gandhi_niradhar/monthly_benefit_widow_two_or_more_children.yaml",
+    "schemes/mh/sanjay_gandhi_niradhar.yaml",
+    "sources/index.yaml",
+    "tests/mh/sanjay_gandhi_niradhar.yaml"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 4060,
+    "cache_creation_tokens": 116409,
+    "cache_read_tokens": 863007,
+    "output_tokens": 12784,
+    "api_call_count": 12
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4KE4N65FT7MYWA8KF55V4X8",
+  "session_id": "a99afcda-d911-443f-af2c-6c9107e1fdcf",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T17:35:30.485974Z",
+  "branch": "niyam/job_20261010_743d13b0",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "CHANGELOG.md",
+    "parameters/mh/sanjay_gandhi_niradhar/monthly_benefit.yaml",
+    "parameters/mh/sanjay_gandhi_niradhar/monthly_benefit_widow_one_child.yaml",
+    "parameters/mh/sanjay_gandhi_niradhar/monthly_benefit_widow_two_or_more_children.yaml",
+    "schemes/mh/sanjay_gandhi_niradhar.yaml",
+    "sources/index.yaml",
+    "tests/mh/sanjay_gandhi_niradhar.yaml"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-haiku-5-5",
+  "turn_id": "da83ca79e221",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 4060,
+    "cache_creation_tokens": 116409,
+    "cache_read_tokens": 863007,
+    "output_tokens": 12784,
+    "api_call_count": 12
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T17:35:30.4470663Z",
+    "agent_lines": 63,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 56,
+    "human_removed": 41,
+    "total_committed": 63,
+    "total_lines_changed": 160,
+    "agent_percentage": 39.375,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 56,
+      "user_lines_removed": 41,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "sources/index.yaml": 56
+      },
+      "user_removed_per_file": {
+        "sources/index.yaml": 41
+      }
+    }
+  ]
+}
