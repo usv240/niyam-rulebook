@@ -20,7 +20,8 @@ document. Wrong rules can stop people from receiving money they are owed.
 5. Run `python -m niyam_rulebook test` and do not stop until it prints `0 failed` and no PROBLEM lines.
 6. Add a plain-language entry at the top of `CHANGELOG.md` in English, Hindi and Marathi.
 7. Only edit files inside `schemes/`, `parameters/`, `tests/`, `sources/`, `glossary/`, `schema/` and `CHANGELOG.md`.
-8. Rule expressions may only use `person.<field>`, `params.<name>`, comparisons, `and`, `or`, `not`, arithmetic, lists, and `min`, `max`, `abs`, `len`.
+8. Defaults for person fields must never grant extra eligibility or money. A fact that unlocks a higher limit or amount (for example `disabled`) defaults to `false`; missing information must never make someone look more eligible than they are.
+9. Rule expressions may only use `person.<field>`, `params.<name>`, comparisons, `and`, `or`, `not`, arithmetic, lists, and `min`, `max`, `abs`, `len`.
 
 <!-- entire-graph:begin -->
 This repo has the entire-graph code graph installed. Before exploring code with
