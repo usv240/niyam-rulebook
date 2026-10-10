@@ -11,3 +11,12 @@ values:
         clause: "5(3)"
         quote: "नियमित/कायम कर्मचारी/कंत्राटी कर्मचारी"
         quote_en: "Regular, permanent or contract employees"
+  2024-07-03:
+    value: [regular, pensioner]
+    metadata:
+      reference:
+        doc: gr-202407031335114330
+        page: 2
+        clause: "5(3)"
+        quote: "रु.2.50 लाखापयंत उत्पन्न असलेले बाह्य यंत्रणाद्वारे कायणरत असलेले कमणचारी, स्वयंसेवी कामगार आहण कं त्राटी कमणचारी पात्र ठरतील."
+        quote_en: "Employees working through outside agencies, volunteer workers and contract employees with income up to Rs 2.50 lakh will be eligible."

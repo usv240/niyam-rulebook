@@ -113,12 +113,25 @@ conditions:
     text: "Does not receive more than Rs {other_scheme_max_inr} a month from other government schemes"
     when: "person.other_scheme_monthly_inr <= params.other_scheme_max_inr"
     valid_from: 2024-06-28
+    valid_until: 2024-07-02
     source:
       doc: gr-202406281814018230
       page: 2
       clause: "5(4)"
       quote: "आर्थिक योजनेव्दारे रु.1,500/- पेक्षा जास्त लाभ घेतला असेल"
       quote_en: "Has received a benefit of more than Rs 1,500 through a financial scheme"
+
+  - id: other_scheme_limit
+    kind: disqualification
+    text: "Receives less than Rs {other_scheme_max_inr} a month from other government schemes"
+    when: "person.other_scheme_monthly_inr < params.other_scheme_max_inr"
+    valid_from: 2024-07-03
+    source:
+      doc: gr-202407031335114330
+      page: 2
+      clause: "5(4)"
+      quote: "दरमहा रु.1,500/- ककवा त्यापेक्षा जास्त रक्तकमेचा लाभ घेत असेल."
+      quote_en: "is receiving a benefit of Rs 1,500/- per month or more than that."
 
   - id: no_mp_mla
     kind: disqualification
@@ -149,12 +162,25 @@ conditions:
     text: "The family does not jointly own more than {farm_land_max_acres} acres of farm land"
     when: "person.family_farm_land_acres <= params.farm_land_max_acres"
     valid_from: 2024-06-28
+    valid_until: 2024-07-02
     source:
       doc: gr-202406281814018230
       page: 2
       clause: "5(7)"
       quote: "ज्यांच्या कुटुंबातील सदस्यांची संयुक्तपणे पाच एकरपेक्षा जास्त शेतजमीन आहे"
       quote_en: "Whose family members jointly own more than five acres of farm land"
+
+  - id: one_unmarried_per_family
+    kind: disqualification
+    text: Only one unmarried woman per family receives the benefit
+    when: "person.marital_status != 'unmarried' or not person.other_unmarried_beneficiary_in_family"
+    valid_from: 2024-07-03
+    source:
+      doc: gr-202407031335114330
+      page: 2
+      clause: "4(2)"
+      quote: "तसेच त्या कु टूंबातील के वळ एक अहववाहहत महहला."
+      quote_en: "as well as only one unmarried woman from that family."
 
   - id: no_four_wheeler
     kind: disqualification

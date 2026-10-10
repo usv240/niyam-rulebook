@@ -31,3 +31,7 @@ government job, land, vehicle) as reported by the applicant for her household.
 A GR applies from its own date unless it states another start date.
 A change to an earlier GR keeps the earlier value in history (a new dated value
 is added; old values are never edited).
+
+## "शासन निर्णयामध्ये खालीलप्रमाणे सुधारणा" (the GR is amended as follows)
+An amending GR changes only the clauses it lists. Every other provision of the original GR stays in force, including how the benefit amount is calculated (for example, paying only the difference when another scheme already pays less than Rs 1,500). When the amending GR merely repeats an amount, as in 'दरमहा रु.१,५००/-' in its deadline clause, that does not cancel a top-up rule in the original GR.
+Source: GR 202407031335114330, opening of 'शासन निर्णय' and section ड; benefit form from GR 202406281814018230 (needs human confirmation of the exact clause).
